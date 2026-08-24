@@ -4,43 +4,45 @@ import { ExternalLink, Zap, User, BookOpen, GraduationCap, Pencil } from "lucide
 import MatrixBackground from "../components/MatrixBackground";
 import CRTOverlay from "../components/CRTOverlay";
 import PixelAvatar from "../components/PixelAvatar";
+import workshopPhoto from "../assets/talks-writing-workshop.png.asset.json";
 
 const talksAndWriting = [
   {
     type: "Article",
-    title: "[Your LinkedIn article title]",
+    title: "Stop treating UX research and experiments like rival religions",
     source: "LinkedIn",
-    url: "#",
+    url: "https://www.linkedin.com/pulse/stop-treating-ux-research-experiments-like-rival-vitor-tavares-aiqxf/",
     icon: Pencil,
     color: "text-cyan-400",
-    date: "—"
+    date: "2024"
   },
   {
     type: "Article",
-    title: "[Your LinkedIn article title]",
+    title: "Balancing UX and Functionality in Product Engineering",
     source: "LinkedIn",
-    url: "#",
+    url: "https://www.linkedin.com/advice/1/how-do-you-prioritize-user-experience-without-hkmif",
     icon: Pencil,
     color: "text-cyan-400",
-    date: "—"
+    date: "2024"
   },
   {
     type: "Workshop",
-    title: "[Your workshop title]",
+    title: "Product Discovery — The Starter",
     source: "The Starter",
-    url: "#",
+    url: "https://www.figma.com/slides/gAWUTU2jbkl7Bj6Qh9vk3g/Product-Discovery---Ther-Starter?node-id=1-42&t=HL5RCb9lRqUXb3AU-0",
     icon: GraduationCap,
     color: "text-purple-400",
-    date: "—"
+    date: "2024",
+    image: workshopPhoto.url
   },
   {
     type: "Talk",
-    title: "[Your talk title]",
-    source: "Event / Conference",
-    url: "#",
+    title: "Design da Informação — Universidad de Palermo (Encuentro)",
+    source: "Universidad de Palermo",
+    url: "https://www.linkedin.com/posts/vitortavaresdossantos_vou-apresentar-meu-projeto-de-pesquisa-que-activity-6548951429837574144-go9j",
     icon: BookOpen,
     color: "text-green-400",
-    date: "—"
+    date: "2023"
   }
 ];
 
@@ -133,23 +135,36 @@ const Index = () => {
               <a
                 key={index}
                 href={item.url}
-                target={item.url !== "#" ? "_blank" : undefined}
-                rel={item.url !== "#" ? "noopener noreferrer" : undefined}
-                className="retro-card group flex items-start space-x-4"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="retro-card group flex flex-col overflow-hidden"
               >
-                <item.icon className={`w-6 h-6 ${item.color} mt-1 flex-shrink-0 group-hover:scale-110 transition-transform`} />
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center space-x-2 mb-1">
-                    <span className={`text-xs font-mono ${item.color} uppercase tracking-wider`}>{item.type}</span>
-                    <span className="text-xs font-mono text-gray-600">·</span>
-                    <span className="text-xs font-mono text-gray-500">{item.source}</span>
-                    <span className="text-xs font-mono text-gray-600 ml-auto">{item.date}</span>
+                {item.image && (
+                  <div className="relative h-32 w-full overflow-hidden border-b border-cyan-900/50">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      loading="lazy"
+                      className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
                   </div>
-                  <h3 className="text-sm font-mono text-gray-300 group-hover:text-white transition-colors leading-snug">
-                    {item.title}
-                  </h3>
+                )}
+                <div className="flex items-start space-x-4 p-4">
+                  <item.icon className={`w-6 h-6 ${item.color} mt-1 flex-shrink-0 group-hover:scale-110 transition-transform`} />
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center space-x-2 mb-1">
+                      <span className={`text-xs font-mono ${item.color} uppercase tracking-wider`}>{item.type}</span>
+                      <span className="text-xs font-mono text-gray-600">·</span>
+                      <span className="text-xs font-mono text-gray-500">{item.source}</span>
+                      <span className="text-xs font-mono text-gray-600 ml-auto">{item.date}</span>
+                    </div>
+                    <h3 className="text-sm font-mono text-gray-300 group-hover:text-white transition-colors leading-snug">
+                      {item.title}
+                    </h3>
+                  </div>
+                  <ExternalLink className="w-4 h-4 text-gray-600 group-hover:text-gray-400 transition-colors flex-shrink-0 mt-1" />
                 </div>
-                <ExternalLink className="w-4 h-4 text-gray-600 group-hover:text-gray-400 transition-colors flex-shrink-0 mt-1" />
               </a>
             ))}
           </div>

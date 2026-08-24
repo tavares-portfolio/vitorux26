@@ -4,43 +4,45 @@ import { ExternalLink, Zap, User, BookOpen, GraduationCap, Pencil } from "lucide
 import MatrixBackground from "../components/MatrixBackground";
 import CRTOverlay from "../components/CRTOverlay";
 import PixelAvatar from "../components/PixelAvatar";
+import workshopPhoto from "../assets/talks-writing-workshop.png.asset.json";
 
 const talksAndWriting = [
   {
     type: "Article",
-    title: "[Your LinkedIn article title]",
+    title: "Stop treating UX research and experiments like rival religions",
     source: "LinkedIn",
-    url: "#",
+    url: "https://www.linkedin.com/pulse/stop-treating-ux-research-experiments-like-rival-vitor-tavares-aiqxf/",
     icon: Pencil,
     color: "text-cyan-400",
-    date: "—"
+    date: "2024"
   },
   {
     type: "Article",
-    title: "[Your LinkedIn article title]",
+    title: "Balancing UX and Functionality in Product Engineering",
     source: "LinkedIn",
-    url: "#",
+    url: "https://www.linkedin.com/advice/1/how-do-you-prioritize-user-experience-without-hkmif",
     icon: Pencil,
     color: "text-cyan-400",
-    date: "—"
+    date: "2024"
   },
   {
     type: "Workshop",
-    title: "[Your workshop title]",
+    title: "Product Discovery — The Starter",
     source: "The Starter",
-    url: "#",
+    url: "https://www.figma.com/slides/gAWUTU2jbkl7Bj6Qh9vk3g/Product-Discovery---Ther-Starter?node-id=1-42&t=HL5RCb9lRqUXb3AU-0",
     icon: GraduationCap,
     color: "text-purple-400",
-    date: "—"
+    date: "2024",
+    image: workshopPhoto.url
   },
   {
     type: "Talk",
-    title: "[Your talk title]",
-    source: "Event / Conference",
-    url: "#",
+    title: "Design da Informação — Universidad de Palermo (Encuentro)",
+    source: "Universidad de Palermo",
+    url: "https://www.linkedin.com/posts/vitortavaresdossantos_vou-apresentar-meu-projeto-de-pesquisa-que-activity-6548951429837574144-go9j",
     icon: BookOpen,
     color: "text-green-400",
-    date: "—"
+    date: "2023"
   }
 ];
 

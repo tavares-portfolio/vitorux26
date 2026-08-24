@@ -1,20 +1,68 @@
 
 import { Link } from "react-router-dom";
-import { ArrowLeft, Download, BarChart, Users, Search, Map, Target, Zap, Database, TestTube } from "lucide-react";
+import { ArrowLeft, Download, Compass, ShieldCheck, LineChart, Workflow, Users, TestTube, BarChart3, ClipboardList, Target, GitBranch, Layers, Activity, Gauge, Database, Map } from "lucide-react";
 import MatrixBackground from "../components/MatrixBackground";
 import CRTOverlay from "../components/CRTOverlay";
 import resumePdf from "@/assets/vitort-resume-2026.pdf.asset.json";
 
 const About = () => {
-  const skills = [
-    { name: "User Interviews", icon: Users, color: "text-cyan-400" },
-    { name: "Usability Testing", icon: TestTube, color: "text-purple-400" },
-    { name: "Survey Research", icon: BarChart, color: "text-green-400" },
-    { name: "Statistical Analysis", icon: Database, color: "text-orange-400" },
-    { name: "Card Sorting", icon: Target, color: "text-yellow-400" },
-    { name: "Behavioral Analytics", icon: Search, color: "text-pink-400" },
-    { name: "MaxDiff Analysis", icon: Zap, color: "text-red-400" },
-    { name: "Discovery Maps", icon: Map, color: "text-blue-400" }
+  const capabilityPillars = [
+    {
+      title: "Generative Discovery & Opportunity Mapping",
+      icon: Compass,
+      color: "text-cyan-400",
+      borderColor: "border-cyan-700",
+      strategy: "Translating human stories into prioritized opportunities that shape product strategy and roadmaps.",
+      capabilities: [
+        { name: "User Interviews", icon: Users },
+        { name: "Diary Studies", icon: ClipboardList },
+        { name: "Jobs to Be Done", icon: Target },
+        { name: "Opportunity Mapping", icon: GitBranch },
+        { name: "Card Sorting", icon: Layers },
+        { name: "Discovery Frameworks", icon: Compass }
+      ]
+    },
+    {
+      title: "Validation & Usability Engineering",
+      icon: ShieldCheck,
+      color: "text-purple-400",
+      borderColor: "border-purple-700",
+      strategy: "De-risking product decisions with evidence before scaling investment across the lifecycle.",
+      capabilities: [
+        { name: "Usability Testing (moderated/unmoderated)", icon: TestTube },
+        { name: "Heuristic Evaluation", icon: ShieldCheck },
+        { name: "Journey Mapping", icon: Map },
+        { name: "Validation Frameworks", icon: Gauge }
+      ]
+    },
+    {
+      title: "Quantitative & Behavioral Intelligence",
+      icon: LineChart,
+      color: "text-green-400",
+      borderColor: "border-green-700",
+      strategy: "Combining behavioral data and statistical rigor to prioritize what moves the needle.",
+      capabilities: [
+        { name: "Descriptive & Inferential Statistics", icon: BarChart3 },
+        { name: "A/B Testing", icon: Activity },
+        { name: "MaxDiff Analysis", icon: Target },
+        { name: "Clickstream & Funnel Metrics", icon: LineChart },
+        { name: "Segmentation & Behavioral Clustering", icon: Database },
+        { name: "UX KPIs & Benchmarking", icon: Gauge }
+      ]
+    },
+    {
+      title: "Research Operations & Strategic Synthesis",
+      icon: Workflow,
+      color: "text-orange-400",
+      borderColor: "border-orange-700",
+      strategy: "Scaling research as a strategic function — embedding evidence into Agile delivery and decision-making.",
+      capabilities: [
+        { name: "Survey Design (Qualtrics)", icon: ClipboardList },
+        { name: "Opportunity Solution Trees", icon: GitBranch },
+        { name: "ResearchOps in Jira", icon: Workflow },
+        { name: "Stakeholder Synthesis & Storytelling", icon: Users }
+      ]
+    }
   ];
 
   const achievements = [
@@ -156,16 +204,42 @@ const About = () => {
             </div>
           </div>
           
-          {/* Skills */}
+          {/* Core Research Capabilities */}
           <div className="mb-12">
-            <h2 className="text-2xl font-mono font-bold text-green-400 mb-6">Core Research Capabilities</h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {skills.map((skill, index) => (
-                <div key={index} className="skill-card group">
-                  <skill.icon className={`w-6 h-6 ${skill.color} mb-3 group-hover:scale-110 transition-transform`} />
-                  <span className="text-xs font-mono text-gray-300">{skill.name}</span>
+            <h2 className="text-2xl font-mono font-bold text-green-400 mb-2">Core Research Capabilities</h2>
+            <p className="text-sm font-mono text-gray-400 mb-6">
+              {">"} UX research as a strategic engine — from generative discovery to evidence-driven prioritization.
+            </p>
+            <div className="space-y-6">
+              {capabilityPillars.map((pillar, pIndex) => (
+                <div key={pIndex} className={`border ${pillar.borderColor} p-5 bg-gray-900/30`}>
+                  <div className="flex items-start space-x-4 mb-4">
+                    <pillar.icon className={`w-7 h-7 ${pillar.color} flex-shrink-0 mt-1`} />
+                    <div>
+                      <h3 className={`text-lg font-mono font-bold ${pillar.color}`}>{pillar.title}</h3>
+                      <p className="text-xs font-mono text-gray-400 mt-1 leading-relaxed">{pillar.strategy}</p>
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 pl-11">
+                    {pillar.capabilities.map((cap, cIndex) => (
+                      <div key={cIndex} className="skill-card group">
+                        <cap.icon className={`w-4 h-4 ${pillar.color} mb-2 group-hover:scale-110 transition-transform`} />
+                        <span className="text-xs font-mono text-gray-300">{cap.name}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               ))}
+            </div>
+            {/* Tools & Platforms */}
+            <div className="mt-6 border border-gray-700 p-5 bg-gray-900/30">
+              <div className="flex items-center space-x-3 mb-3">
+                <Database className="w-5 h-5 text-blue-400" />
+                <h3 className="text-lg font-mono font-bold text-blue-400">Tools & Platforms</h3>
+              </div>
+              <p className="text-xs font-mono text-gray-400 leading-relaxed pl-8">
+                Looker Studio · Dovetail · Maze · Hotjar · SPSS · Tableau · R · Google Sheets · Excel (Advanced) · Jira · Confluence · Figma · Notion · Miro · Qualtrics · Google Forms
+              </p>
             </div>
           </div>
           

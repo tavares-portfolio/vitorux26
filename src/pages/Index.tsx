@@ -135,23 +135,36 @@ const Index = () => {
               <a
                 key={index}
                 href={item.url}
-                target={item.url !== "#" ? "_blank" : undefined}
-                rel={item.url !== "#" ? "noopener noreferrer" : undefined}
-                className="retro-card group flex items-start space-x-4"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="retro-card group flex flex-col overflow-hidden"
               >
-                <item.icon className={`w-6 h-6 ${item.color} mt-1 flex-shrink-0 group-hover:scale-110 transition-transform`} />
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center space-x-2 mb-1">
-                    <span className={`text-xs font-mono ${item.color} uppercase tracking-wider`}>{item.type}</span>
-                    <span className="text-xs font-mono text-gray-600">·</span>
-                    <span className="text-xs font-mono text-gray-500">{item.source}</span>
-                    <span className="text-xs font-mono text-gray-600 ml-auto">{item.date}</span>
+                {item.image && (
+                  <div className="relative h-32 w-full overflow-hidden border-b border-cyan-900/50">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      loading="lazy"
+                      className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
                   </div>
-                  <h3 className="text-sm font-mono text-gray-300 group-hover:text-white transition-colors leading-snug">
-                    {item.title}
-                  </h3>
+                )}
+                <div className="flex items-start space-x-4 p-4">
+                  <item.icon className={`w-6 h-6 ${item.color} mt-1 flex-shrink-0 group-hover:scale-110 transition-transform`} />
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center space-x-2 mb-1">
+                      <span className={`text-xs font-mono ${item.color} uppercase tracking-wider`}>{item.type}</span>
+                      <span className="text-xs font-mono text-gray-600">·</span>
+                      <span className="text-xs font-mono text-gray-500">{item.source}</span>
+                      <span className="text-xs font-mono text-gray-600 ml-auto">{item.date}</span>
+                    </div>
+                    <h3 className="text-sm font-mono text-gray-300 group-hover:text-white transition-colors leading-snug">
+                      {item.title}
+                    </h3>
+                  </div>
+                  <ExternalLink className="w-4 h-4 text-gray-600 group-hover:text-gray-400 transition-colors flex-shrink-0 mt-1" />
                 </div>
-                <ExternalLink className="w-4 h-4 text-gray-600 group-hover:text-gray-400 transition-colors flex-shrink-0 mt-1" />
               </a>
             ))}
           </div>

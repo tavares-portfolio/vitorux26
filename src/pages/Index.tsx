@@ -1,9 +1,48 @@
 
 import { Link } from "react-router-dom";
-import { ExternalLink, Zap, User } from "lucide-react";
+import { ExternalLink, Zap, User, BookOpen, GraduationCap, Pencil } from "lucide-react";
 import MatrixBackground from "../components/MatrixBackground";
 import CRTOverlay from "../components/CRTOverlay";
 import PixelAvatar from "../components/PixelAvatar";
+
+const talksAndWriting = [
+  {
+    type: "Article",
+    title: "[Your LinkedIn article title]",
+    source: "LinkedIn",
+    url: "#",
+    icon: Pencil,
+    color: "text-cyan-400",
+    date: "—"
+  },
+  {
+    type: "Article",
+    title: "[Your LinkedIn article title]",
+    source: "LinkedIn",
+    url: "#",
+    icon: Pencil,
+    color: "text-cyan-400",
+    date: "—"
+  },
+  {
+    type: "Workshop",
+    title: "[Your workshop title]",
+    source: "The Starter",
+    url: "#",
+    icon: GraduationCap,
+    color: "text-purple-400",
+    date: "—"
+  },
+  {
+    type: "Talk",
+    title: "[Your talk title]",
+    source: "Event / Conference",
+    url: "#",
+    icon: BookOpen,
+    color: "text-green-400",
+    date: "—"
+  }
+];
 
 const Index = () => {
   return (

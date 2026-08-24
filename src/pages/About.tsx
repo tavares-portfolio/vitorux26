@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowLeft, Download, BarChart, Users, Search, Map, Target, Zap, Database, TestTube } from "lucide-react";
 import MatrixBackground from "../components/MatrixBackground";
 import CRTOverlay from "../components/CRTOverlay";
+import resumePdf from "@/assets/vitort-resume-2026.pdf.asset.json";
 
 const About = () => {
   const skills = [
@@ -79,7 +80,7 @@ const About = () => {
             {/* Centered Download Resume Button */}
             <div className="flex justify-center my-8">
               <a 
-                href="https://drive.google.com/file/d/170C1OXDHRhKkt2BVpCXakVefJ5S7OeOI/view?usp=sharing"
+                href={resumePdf.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center space-x-2 px-6 py-3 border border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-black transition-all font-mono text-lg"

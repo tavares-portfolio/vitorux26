@@ -204,16 +204,42 @@ const About = () => {
             </div>
           </div>
           
-          {/* Skills */}
+          {/* Core Research Capabilities */}
           <div className="mb-12">
-            <h2 className="text-2xl font-mono font-bold text-green-400 mb-6">Core Research Capabilities</h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {skills.map((skill, index) => (
-                <div key={index} className="skill-card group">
-                  <skill.icon className={`w-6 h-6 ${skill.color} mb-3 group-hover:scale-110 transition-transform`} />
-                  <span className="text-xs font-mono text-gray-300">{skill.name}</span>
+            <h2 className="text-2xl font-mono font-bold text-green-400 mb-2">Core Research Capabilities</h2>
+            <p className="text-sm font-mono text-gray-400 mb-6">
+              {">"} UX research as a strategic engine — from generative discovery to evidence-driven prioritization.
+            </p>
+            <div className="space-y-6">
+              {capabilityPillars.map((pillar, pIndex) => (
+                <div key={pIndex} className={`border ${pillar.borderColor} p-5 bg-gray-900/30`}>
+                  <div className="flex items-start space-x-4 mb-4">
+                    <pillar.icon className={`w-7 h-7 ${pillar.color} flex-shrink-0 mt-1`} />
+                    <div>
+                      <h3 className={`text-lg font-mono font-bold ${pillar.color}`}>{pillar.title}</h3>
+                      <p className="text-xs font-mono text-gray-400 mt-1 leading-relaxed">{pillar.strategy}</p>
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 pl-11">
+                    {pillar.capabilities.map((cap, cIndex) => (
+                      <div key={cIndex} className="skill-card group">
+                        <cap.icon className={`w-4 h-4 ${pillar.color} mb-2 group-hover:scale-110 transition-transform`} />
+                        <span className="text-xs font-mono text-gray-300">{cap.name}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               ))}
+            </div>
+            {/* Tools & Platforms */}
+            <div className="mt-6 border border-gray-700 p-5 bg-gray-900/30">
+              <div className="flex items-center space-x-3 mb-3">
+                <Database className="w-5 h-5 text-blue-400" />
+                <h3 className="text-lg font-mono font-bold text-blue-400">Tools & Platforms</h3>
+              </div>
+              <p className="text-xs font-mono text-gray-400 leading-relaxed pl-8">
+                Looker Studio · Dovetail · Maze · Hotjar · SPSS · Tableau · R · Google Sheets · Excel (Advanced) · Jira · Confluence · Figma · Notion · Miro · Qualtrics · Google Forms
+              </p>
             </div>
           </div>
           

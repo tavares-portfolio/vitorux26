@@ -1,9 +1,48 @@
 
 import { Link } from "react-router-dom";
-import { ExternalLink, Zap, User } from "lucide-react";
+import { ExternalLink, Zap, User, BookOpen, GraduationCap, Pencil } from "lucide-react";
 import MatrixBackground from "../components/MatrixBackground";
 import CRTOverlay from "../components/CRTOverlay";
 import PixelAvatar from "../components/PixelAvatar";
+
+const talksAndWriting = [
+  {
+    type: "Article",
+    title: "[Your LinkedIn article title]",
+    source: "LinkedIn",
+    url: "#",
+    icon: Pencil,
+    color: "text-cyan-400",
+    date: "—"
+  },
+  {
+    type: "Article",
+    title: "[Your LinkedIn article title]",
+    source: "LinkedIn",
+    url: "#",
+    icon: Pencil,
+    color: "text-cyan-400",
+    date: "—"
+  },
+  {
+    type: "Workshop",
+    title: "[Your workshop title]",
+    source: "The Starter",
+    url: "#",
+    icon: GraduationCap,
+    color: "text-purple-400",
+    date: "—"
+  },
+  {
+    type: "Talk",
+    title: "[Your talk title]",
+    source: "Event / Conference",
+    url: "#",
+    icon: BookOpen,
+    color: "text-green-400",
+    date: "—"
+  }
+];
 
 const Index = () => {
   return (
@@ -79,6 +118,44 @@ const Index = () => {
               
             </div>
           </div>
+        </div>
+        
+        {/* Talks & Writing Section */}
+        <div className="w-full max-w-6xl mx-auto mt-16">
+          <div className="mb-6">
+            <h2 className="text-2xl font-mono font-bold text-orange-400 mb-2">Talks & Writing</h2>
+            <p className="text-sm text-gray-400 font-mono">
+              {">"} Publications, workshops and talks — sharing research beyond the product._
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {talksAndWriting.map((item, index) => (
+              <a
+                key={index}
+                href={item.url}
+                target={item.url !== "#" ? "_blank" : undefined}
+                rel={item.url !== "#" ? "noopener noreferrer" : undefined}
+                className="retro-card group flex items-start space-x-4"
+              >
+                <item.icon className={`w-6 h-6 ${item.color} mt-1 flex-shrink-0 group-hover:scale-110 transition-transform`} />
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center space-x-2 mb-1">
+                    <span className={`text-xs font-mono ${item.color} uppercase tracking-wider`}>{item.type}</span>
+                    <span className="text-xs font-mono text-gray-600">·</span>
+                    <span className="text-xs font-mono text-gray-500">{item.source}</span>
+                    <span className="text-xs font-mono text-gray-600 ml-auto">{item.date}</span>
+                  </div>
+                  <h3 className="text-sm font-mono text-gray-300 group-hover:text-white transition-colors leading-snug">
+                    {item.title}
+                  </h3>
+                </div>
+                <ExternalLink className="w-4 h-4 text-gray-600 group-hover:text-gray-400 transition-colors flex-shrink-0 mt-1" />
+              </a>
+            ))}
+          </div>
+          <p className="text-xs text-gray-600 font-mono mt-4 text-center">
+            {">"} More publications coming soon — links updating_
+          </p>
         </div>
         
         {/* Footer */}

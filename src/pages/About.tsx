@@ -1,20 +1,68 @@
 
 import { Link } from "react-router-dom";
-import { ArrowLeft, Download, BarChart, Users, Search, Map, Target, Zap, Database, TestTube } from "lucide-react";
+import { ArrowLeft, Download, Compass, ShieldCheck, LineChart, Workflow, Users, TestTube, BarChart3, ClipboardList, Target, GitBranch, Layers, Activity, Gauge, Database, Map } from "lucide-react";
 import MatrixBackground from "../components/MatrixBackground";
 import CRTOverlay from "../components/CRTOverlay";
 import resumePdf from "@/assets/vitort-resume-2026.pdf.asset.json";
 
 const About = () => {
-  const skills = [
-    { name: "User Interviews", icon: Users, color: "text-cyan-400" },
-    { name: "Usability Testing", icon: TestTube, color: "text-purple-400" },
-    { name: "Survey Research", icon: BarChart, color: "text-green-400" },
-    { name: "Statistical Analysis", icon: Database, color: "text-orange-400" },
-    { name: "Card Sorting", icon: Target, color: "text-yellow-400" },
-    { name: "Behavioral Analytics", icon: Search, color: "text-pink-400" },
-    { name: "MaxDiff Analysis", icon: Zap, color: "text-red-400" },
-    { name: "Discovery Maps", icon: Map, color: "text-blue-400" }
+  const capabilityPillars = [
+    {
+      title: "Generative Discovery & Opportunity Mapping",
+      icon: Compass,
+      color: "text-cyan-400",
+      borderColor: "border-cyan-700",
+      strategy: "Translating human stories into prioritized opportunities that shape product strategy and roadmaps.",
+      capabilities: [
+        { name: "User Interviews", icon: Users },
+        { name: "Diary Studies", icon: ClipboardList },
+        { name: "Jobs to Be Done", icon: Target },
+        { name: "Opportunity Mapping", icon: GitBranch },
+        { name: "Card Sorting", icon: Layers },
+        { name: "Discovery Frameworks", icon: Compass }
+      ]
+    },
+    {
+      title: "Validation & Usability Engineering",
+      icon: ShieldCheck,
+      color: "text-purple-400",
+      borderColor: "border-purple-700",
+      strategy: "De-risking product decisions with evidence before scaling investment across the lifecycle.",
+      capabilities: [
+        { name: "Usability Testing (moderated/unmoderated)", icon: TestTube },
+        { name: "Heuristic Evaluation", icon: ShieldCheck },
+        { name: "Journey Mapping", icon: Map },
+        { name: "Validation Frameworks", icon: Gauge }
+      ]
+    },
+    {
+      title: "Quantitative & Behavioral Intelligence",
+      icon: LineChart,
+      color: "text-green-400",
+      borderColor: "border-green-700",
+      strategy: "Combining behavioral data and statistical rigor to prioritize what moves the needle.",
+      capabilities: [
+        { name: "Descriptive & Inferential Statistics", icon: BarChart3 },
+        { name: "A/B Testing", icon: Activity },
+        { name: "MaxDiff Analysis", icon: Target },
+        { name: "Clickstream & Funnel Metrics", icon: LineChart },
+        { name: "Segmentation & Behavioral Clustering", icon: Database },
+        { name: "UX KPIs & Benchmarking", icon: Gauge }
+      ]
+    },
+    {
+      title: "Research Operations & Strategic Synthesis",
+      icon: Workflow,
+      color: "text-orange-400",
+      borderColor: "border-orange-700",
+      strategy: "Scaling research as a strategic function — embedding evidence into Agile delivery and decision-making.",
+      capabilities: [
+        { name: "Survey Design (Qualtrics)", icon: ClipboardList },
+        { name: "Opportunity Solution Trees", icon: GitBranch },
+        { name: "ResearchOps in Jira", icon: Workflow },
+        { name: "Stakeholder Synthesis & Storytelling", icon: Users }
+      ]
+    }
   ];
 
   const achievements = [

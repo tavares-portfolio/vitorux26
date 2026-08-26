@@ -1,10 +1,9 @@
 
 import { Link } from "react-router-dom";
-import { ExternalLink, Zap, User, BookOpen, GraduationCap, Pencil } from "lucide-react";
+import { ExternalLink, Zap, User, BookOpen } from "lucide-react";
 import MatrixBackground from "../components/MatrixBackground";
 import CRTOverlay from "../components/CRTOverlay";
 import PixelAvatar from "../components/PixelAvatar";
-import workshopPhoto from "../assets/talks-writing-workshop.png.asset.json";
 
 const talksAndWriting = [
   {

@@ -35,7 +35,7 @@ const Index = () => {
             </div>
             
             {/* Interactive Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               
               {/* Cases Card */}
               <a 
@@ -73,6 +73,18 @@ const Index = () => {
                   <h3 className="text-xl font-mono font-bold text-green-400 mb-2">About Me</h3>
                   <p className="text-sm text-gray-400 font-mono">
                     Journey through B2B, SaaS & e-commerce research
+                  </p>
+                  <div className="pixel-border mt-4"></div>
+                </div>
+              </Link>
+              
+              {/* Talks & Writing Card */}
+              <Link to="/talks-writing" className="retro-card group">
+                <div className="card-content">
+                  <BookOpen className="w-8 h-8 text-orange-400 mb-4 group-hover:text-orange-300 transition-colors" />
+                  <h3 className="text-xl font-mono font-bold text-orange-400 mb-2">Talks & Writing</h3>
+                  <p className="text-sm text-gray-400 font-mono">
+                    Publications, workshops and talks
                   </p>
                   <div className="pixel-border mt-4"></div>
                 </div>

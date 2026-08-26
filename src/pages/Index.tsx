@@ -94,56 +94,6 @@ const Index = () => {
           </div>
         </div>
         
-        {/* Talks & Writing Section */}
-        <div className="w-full max-w-6xl mx-auto mt-16">
-          <div className="mb-6">
-            <h2 className="text-2xl font-mono font-bold text-orange-400 mb-2">Talks & Writing</h2>
-            <p className="text-sm text-gray-400 font-mono">
-              {">"} Publications, workshops and talks — sharing research beyond the product._
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {talksAndWriting.map((item, index) => (
-              <a
-                key={index}
-                href={item.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="retro-card group flex flex-col overflow-hidden"
-              >
-                {item.image && (
-                  <div className="relative h-32 w-full overflow-hidden border-b border-cyan-900/50">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      loading="lazy"
-                      className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
-                  </div>
-                )}
-                <div className="flex items-start space-x-4 p-4">
-                  <item.icon className={`w-6 h-6 ${item.color} mt-1 flex-shrink-0 group-hover:scale-110 transition-transform`} />
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center space-x-2 mb-1">
-                      <span className={`text-xs font-mono ${item.color} uppercase tracking-wider`}>{item.type}</span>
-                      <span className="text-xs font-mono text-gray-600">·</span>
-                      <span className="text-xs font-mono text-gray-500">{item.source}</span>
-                      <span className="text-xs font-mono text-gray-600 ml-auto">{item.date}</span>
-                    </div>
-                    <h3 className="text-sm font-mono text-gray-300 group-hover:text-white transition-colors leading-snug">
-                      {item.title}
-                    </h3>
-                  </div>
-                  <ExternalLink className="w-4 h-4 text-gray-600 group-hover:text-gray-400 transition-colors flex-shrink-0 mt-1" />
-                </div>
-              </a>
-            ))}
-          </div>
-          <p className="text-xs text-gray-600 font-mono mt-4 text-center">
-            {">"} More publications coming soon — links updating_
-          </p>
-        </div>
         
         {/* Footer */}
         <div className="absolute bottom-4 left-4 text-xs text-gray-600 font-mono">

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowLeft, Download, Compass, ShieldCheck, LineChart, Workflow, Users, TestTube, BarChart3, ClipboardList, Target, GitBranch, Layers, Activity, Gauge, Database, Map } from "lucide-react";
 import MatrixBackground from "../components/MatrixBackground";
 import CRTOverlay from "../components/CRTOverlay";
-import resumePdf from "@/assets/vitort-resume-2026.pdf.asset.json";
+import resumePdf from "@/assets/uxr-vitortavares-resume-2026.pdf.asset.json";
 
 const About = () => {
   const capabilityPillars = [

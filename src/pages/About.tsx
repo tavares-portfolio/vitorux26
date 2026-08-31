@@ -1,9 +1,8 @@
 
 import { Link } from "react-router-dom";
-import { ArrowLeft, Download, Compass, ShieldCheck, LineChart, Workflow, Users, TestTube, BarChart3, ClipboardList, Target, GitBranch, Layers, Activity, Gauge, Database, Map } from "lucide-react";
+import { ArrowLeft, Linkedin, Compass, ShieldCheck, LineChart, Workflow, Users, TestTube, BarChart3, ClipboardList, Target, GitBranch, Layers, Activity, Gauge, Database, Map } from "lucide-react";
 import MatrixBackground from "../components/MatrixBackground";
 import CRTOverlay from "../components/CRTOverlay";
-import resumePdf from "@/assets/uxr-vitortavares-resume-2026.pdf.asset.json";
 
 const About = () => {
   const capabilityPillars = [
@@ -125,16 +124,16 @@ const About = () => {
               {">"} UX Researcher with 8 years of experience across B2C and B2B contexts, including cybersecurity (freemium apps), engineering consultancy (public services), logistics (SaaS platforms), and international e-commerce (20+ markets). Skilled in applying research strategies across diverse business models and product domains. - Led research across the product lifecycle, from generative discovery to post-launch iteration, using qualitative and quantitative methods: semi-structured interviews, usability testing (remote/in-person), large-scale surveys (Qualtrics), A/B testing, and behavioral analysis. Core Competencies Product Strategy, User Experience (UX), Data Management, Statistical Analysis, Quantitative Research, Qualitative Research, Story Telling.
             </p>
             
-            {/* Centered Download Resume Button */}
+            {/* LinkedIn CTA */}
             <div className="flex justify-center my-8">
               <a 
-                href={resumePdf.url}
+                href="https://www.linkedin.com/in/vitortavaresdossantos/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center space-x-2 px-6 py-3 border border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-black transition-all font-mono text-lg"
+                className="flex items-center space-x-2 px-6 py-3 border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black transition-all font-mono text-lg"
               >
-                <Download className="w-5 h-5" />
-                <span>Full Resume</span>
+                <Linkedin className="w-5 h-5" />
+                <span>Connect on LinkedIn</span>
               </a>
             </div>
           </div>

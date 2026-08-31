@@ -27,11 +27,23 @@ const Index = () => {
                 vitorux<span className="text-green-400 animate-pulse">_</span>
               </h1>
               <p className="text-xl md:text-2xl text-purple-400 font-mono mb-2">
-                UX Research
+                UX Research <span className="text-green-400">|</span> UX Strategist
               </p>
-              <p className="text-sm text-gray-400 font-mono">
+              <p className="text-sm text-gray-400 font-mono mb-5">
                 {">"} Bridging user behavior, data science, and AI to drive product growth_
               </p>
+              <a
+                href="https://calendly.com/vitorux/meet-up"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 border border-green-400/40 text-green-400 hover:bg-green-400 hover:text-black transition-all font-mono text-sm"
+              >
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                </span>
+                Let&apos;s Meeting — Book a slot
+              </a>
             </div>
             
             {/* Interactive Cards */}

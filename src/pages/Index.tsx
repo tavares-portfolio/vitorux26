@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import { ExternalLink, Zap, User, BookOpen } from "lucide-react";
+import { ExternalLink, Zap, User, BookOpen, Heart, Activity } from "lucide-react";
 import MatrixBackground from "../components/MatrixBackground";
 import CRTOverlay from "../components/CRTOverlay";
 import PixelAvatar from "../components/PixelAvatar";
